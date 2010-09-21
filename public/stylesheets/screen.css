@@ -1,0 +1,9 @@
+.notice {
+  background: #eee;
+  color: green;
+}
+
+.alert {
+  background: #ddf;
+  color: red;
+}

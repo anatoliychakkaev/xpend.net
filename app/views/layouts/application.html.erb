@@ -8,6 +8,17 @@
 </head>
 <body>
 
+  <p class="user_nav">
+    <% unless user_signed_in? %>
+      <%= link_to "Register", new_user_registration_path %> |
+      <%= link_to "Sign in", new_user_session_path %>
+    <% else %>
+      <%= link_to "Logout", destroy_user_session_path %>
+    <% end %>
+  </p>
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
+
 <%= yield %>
 
 </body>
