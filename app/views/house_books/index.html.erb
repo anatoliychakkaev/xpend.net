@@ -1,0 +1,23 @@
+<h1>House books</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @house_books.each do |house_book| %>
+  <tr>
+    <td><%= house_book.name %></td>
+    <td><%= link_to 'Show', house_book %></td>
+    <td><%= link_to 'Edit', edit_house_book_path(house_book) %></td>
+    <td><%= link_to 'Destroy', house_book, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New house book', new_house_book_path %>

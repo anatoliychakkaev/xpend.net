@@ -1,17 +1,12 @@
 XpendNet::Application.routes.draw do
-  get "outlays/index"
-
-  get "outlays/create"
-
-  get "outlays/destroy"
-
-  get "outlays/edit"
-
-  get "outlays/update"
-
   devise_for :users
 
   root :to => 'outlays#index'
+  resources :outlay_records, :controller => :outlays do
+    get :earlier, :on => :collection
+  end
+  resources :outlay_categories
+  resources :house_books
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

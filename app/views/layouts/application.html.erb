@@ -3,24 +3,44 @@
 <head>
   <title>xpend.net</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults, 'autocomplete' %>
   <%= csrf_meta_tag %>
+  <%= yield :head %>
 </head>
+
 <body>
 
-  <p class="user_nav">
-    <% unless user_signed_in? %>
-      <%= link_to "Register", new_user_registration_path %> |
-      <%= link_to "Sign in", new_user_session_path %>
-    <% else %>
-      Logged in as <%= link_to current_user.email, edit_user_registration_path %>. Not you?
-      <%= link_to "Logout", destroy_user_session_path %>
-    <% end %>
-  </p>
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
+  <div class="top_nav_wrapper">
+    <div class="top_nav">
+      <% if user_signed_in? %>
+      <p class="app_nav">
+        <!--<%= link_to "Books", house_books_path %> | -->
+        <%= link_to "Categories", outlay_categories_path %> |
+        <%= link_to "Trends" %>
+      </p>
+      <% end %>
+      <p class="user_nav">
+      <% unless user_signed_in? %>
+        <%= link_to "Register", new_user_registration_path %> |
+        <%= link_to "Sign in", new_user_session_path %>
+      <% else %>
+        Logged in as <%= link_to current_user.email, edit_user_registration_path %>. Not you?
+        <%= link_to "Logout", destroy_user_session_path %>
+      <% end %>
+      </p>
+    </div>
+  </div>
 
-<%= yield %>
+  <div class="content">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </div>
 
 </body>
 </html>

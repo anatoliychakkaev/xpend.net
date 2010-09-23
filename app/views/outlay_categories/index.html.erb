@@ -1,0 +1,23 @@
+<h1>Outlay categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @outlay_categories.each do |outlay_category| %>
+  <tr>
+    <td><%= outlay_category.name %></td>
+    <td><%= link_to 'Show', outlay_category %></td>
+    <td><%= link_to 'Edit', edit_outlay_category_path(outlay_category) %></td>
+    <td><%= link_to 'Destroy', outlay_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New category', new_outlay_category_path %>

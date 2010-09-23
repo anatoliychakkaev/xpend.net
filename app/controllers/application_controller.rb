@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
+  # before_filter :set_user_language
+  before_filter :set_user_time_zone
+
+  protected
+
+  def set_user_time_zone
+    Time.zone = 'Moscow' #current_user.time_zone unless current_user.blank?
+  end
+
   def layout_by_resource
     unless user_signed_in?
       "landing"
@@ -15,4 +24,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def define_house_book
+    @house_book = current_user.default_house_book if user_signed_in?
+  end
 end

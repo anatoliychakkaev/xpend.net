@@ -1,0 +1,5 @@
+var $link = $('#load_earlier');
+<% unless @day.blank? %>
+  $link.after('<%= escape_javascript(render(:partial => 'day_block', :locals => { :records => @day } )) %>')
+<% end %>
+$link.remove();

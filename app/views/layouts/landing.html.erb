@@ -41,11 +41,17 @@
       <%= link_to "Logout", destroy_user_session_path %>
     <% end %>
   </p>
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
 
-  <div class="outer_block">
-    <%= yield %>
+  <div class="content">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <div class="outer_block">
+      <%= yield %>
+    </div>
   </div>
 
 </body>

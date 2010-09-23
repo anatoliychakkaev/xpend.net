@@ -10,7 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100920191341) do
+ActiveRecord::Schema.define(:version => 20100921183104) do
+
+  create_table "house_books", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "outlay_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "house_book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "outlay_records", :force => true do |t|
+    t.integer  "outlay_category_id"
+    t.integer  "house_book_id"
+    t.decimal  "amount"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "participations", :force => true do |t|
+    t.integer  "house_book_id"
+    t.integer  "user_id"
+    t.boolean  "default"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

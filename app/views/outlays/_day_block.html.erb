@@ -1,0 +1,47 @@
+<div class="block_wrapper">
+  <div class="day_block upper_rounded">
+    <div class="header upper_rounded">
+      <%=
+        if records.present?
+          date = records.to_a.first.created_at
+        else
+          date = Date.today
+        end
+        date.strftime '%A, %e %B'
+      %>
+      <span class="amount">
+        <%= records.to_a.sum(&:amount) %>
+      </span>
+    </div>
+    <div class="outlays">
+      <% if records.present? %>
+        <% records.group_by(&:outlay_category_id).each do |records| %>
+          <div class="category">
+            <%= records.last.first.outlay_category ? records.last.first.outlay_category.name : 'Uncategorized' %>
+            <span class="amount">
+              <%= records.last.sum(&:amount) %>
+            </span>
+          </div>
+          <div class="records">
+          <% records.last.each do |record| %>
+            <div class="record" data-id="<%= record.id %>">
+              <%= record.note %>
+              <%= link_to "Delete", record, :method => :delete, :confirm => 'Sure?' %>
+              <%= link_to "Edit", [:edit, record] %>
+              <span class="amount">
+                <%= record.amount %>
+              </span>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="no_records">
+        No outlay records for today
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Earlier", { :action => 'earlier', :date => date.to_date }, :id => 'load_earlier', :remote => true %>

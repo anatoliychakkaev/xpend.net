@@ -1,2 +1,16 @@
-<h1>Outlays#edit</h1>
-<p>Find me in app/views/outlays/edit.html.erb</p>
+<h1>Edit outlay record</h1>
+<%= form_for @outlay_record do |f| %>
+  <p>
+    <%= f.label :outlay_category_id %><br/>
+    <%= f.select :outlay_category_id, options_for_select(@house_book.outlay_categories.map{|c| [c.name, c.id]}, @outlay_record.outlay_category_id) %>
+  </p>
+  <p>
+    <%= f.label :amount %><br/>
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :note %><br/>
+    <%= f.text_field :note %>
+  </p>
+  <%= f.submit 'Save' %>
+<% end %>

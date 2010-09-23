@@ -1,2 +1,38 @@
-<h1>Outlays#index</h1>
-<p>Find me in app/views/outlays/index.html.erb</p>
+<% content_for :head do %>
+  <script>
+    jQuery(function () {
+      var categories = ['<%= @house_book.outlay_categories.map(&:name).join("','") %>'].sort();
+      var notes = ['<%= @house_book.outlay_records.map(&:note).uniq.join("','") %>'].sort();
+      var $input = jQuery('.form_container input[type=text]');
+      $input.autocomplete([
+      {
+        regex: /^\d+[.,]?\d*\s+(.*)$/,
+        items: categories,
+        suffix: ': '
+        }, {
+        regex: /^\d+[.,]?\d*\s+.*?: (.+)$/,
+        items: notes
+      }
+      ]);
+      $input[0].focus();
+    });
+  </script>
+<% end %>
+<div class="block_wrapper">
+  <div class="form_container upper_rounded">
+    <%= form_for @house_book.outlay_records.build do |f| %>
+      <%= text_field_tag :outlay_record %><br/>
+      <p class="example">
+      Example: <strong>
+        <span style="color: green" title="Amount">299.90</span>
+        <span style="color: blue" title="Category">Food</span><span
+        style="color: red" title="colon">:</span>
+        <span style="color: gray" title="Short note">diner</span>
+      </strong><br/>
+      </p>
+      <%= f.submit "Create outlay record" %>
+    <% end %>
+  </div>
+</div>
+
+<%= render :partial => 'outlays/day_block', :locals => { :records => @today_records } %>
