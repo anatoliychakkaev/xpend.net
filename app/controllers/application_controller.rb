@@ -16,11 +16,7 @@ class ApplicationController < ActionController::Base
     unless user_signed_in?
       "landing"
     else
-      if devise_controller?
-        "devise"
-      else
-        "application"
-      end
+      "application"
     end
   end
 
