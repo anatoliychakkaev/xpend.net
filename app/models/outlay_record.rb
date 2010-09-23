@@ -6,8 +6,7 @@ class OutlayRecord < ActiveRecord::Base
   validates_presence_of :house_book
   validates_presence_of :outlay_category
 
-  scope :by_date, lambda { |date| { :conditions => ['created_at BETWEEN ? AND ?', date.beginning_of_day, date.end_of_day ] } }
-
+  scope :by_date, lambda { |date| { :conditions => ['outlay_records.created_at BETWEEN ? AND ?', date.beginning_of_day, date.end_of_day ], :include => :outlay_category } }
   def self.create_from_string(s)
     match = s.match(/(\d+|\d*[\.,]\d+)\s+(.+?):\s*(.*)$/)
     return false if match.blank?
