@@ -1,6 +1,6 @@
-<h1>Editing category</h1>
+<h1><%= t 'outlay_category.edit' %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @outlay_category %> |
-<%= link_to 'Back', outlay_categories_path %>
+<%= link_to t('outlay_category.show'), @outlay_category %> |
+<%= link_to t('common.back'), outlay_categories_path %>

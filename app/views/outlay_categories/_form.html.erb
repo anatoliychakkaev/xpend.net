@@ -11,10 +11,10 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :name, t("outlay_category.name") %><br>
     <%= f.text_field :name %>
   </p>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t("common.submit") %>
   </div>
 <% end %>
