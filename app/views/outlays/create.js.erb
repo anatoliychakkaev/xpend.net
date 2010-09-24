@@ -1,0 +1,9 @@
+$('.day_block:first').parent().replaceWith('<%= escape_javascript(render :partial => 'day_block', :locals => { :records => @day, :only_block => true } ) %>')
+
+<% if @record %>
+if ($.inArray(cat, categories) === -1) {
+  var cat = '<%= @record.outlay_category.name %>';
+  categories.push(cat);
+  categories.sort();
+}
+<% end %>

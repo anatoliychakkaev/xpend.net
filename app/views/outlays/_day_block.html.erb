@@ -1,14 +1,8 @@
+<% date = records.present? ? records.to_a.first.created_at.to_date : Date.today %>
 <div class="block_wrapper">
-  <div class="day_block upper_rounded">
+  <div class="day_block upper_rounded" data-date="<%= date %>">
     <div class="header upper_rounded">
-      <%=
-        if records.present?
-          date = records.to_a.first.created_at
-        else
-          date = Date.today
-        end
-        date.strftime '%A, %e %B'
-      %>
+      <%= date.strftime '%A, %e %B' %>
       <span class="amount">
         <%= records.to_a.sum(&:amount) %>
       </span>
@@ -25,8 +19,8 @@
           <div class="records">
           <% records.last.each do |record| %>
             <div class="record" data-id="<%= record.id %>">
-              <%= record.note %>
-              <%= link_to "Delete", record, :method => :delete, :confirm => 'Sure?' %>
+              <%= record.note %>&nbsp;
+              <%= link_to "Delete", record, :method => :delete, :confirm => 'Sure?', :remote => true %>
               <%= link_to "Edit", [:edit, record] %>
               <span class="amount">
                 <%= record.amount %>
@@ -37,11 +31,13 @@
         <% end %>
       <% else %>
         <p class="no_records">
-        No outlay records for today
+          No outlay records for today
         </p>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to "Earlier", { :action => 'earlier', :date => date.to_date }, :id => 'load_earlier', :remote => true %>
+<% unless defined?(only_block) && only_block %>
+  <%= link_to "Earlier", { :action => 'earlier', :date => date.to_date }, :id => 'load_earlier', :remote => true %>
+<% end %>

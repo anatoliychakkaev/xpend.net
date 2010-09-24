@@ -8,15 +8,19 @@ class OutlaysController < ApplicationController
   end
 
   def create
-    if @house_book.outlay_records.create_from_string(params[:outlay_record])
+    if @record = @house_book.outlay_records.create_from_string(params[:outlay_record])
       flash[:notice] = 'Record created'
+      @day = @house_book.outlay_records.by_date(Date.today)
     end
-    redirect_to root_path
+    redirect_to root_path unless request.xhr?
   end
 
   def destroy
-    @house_book.outlay_records.find(params[:id]).destroy
-    redirect_to root_path
+    record = @house_book.outlay_records.find(params[:id])
+    @time = record.created_at
+    @day = @house_book.outlay_records.by_date(@time)
+    record.destroy
+    redirect_to root_path unless request.xhr?
   end
 
   def edit

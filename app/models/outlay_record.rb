@@ -16,6 +16,6 @@ class OutlayRecord < ActiveRecord::Base
       :note => match[3]
     })
     record.outlay_category = record.house_book.outlay_categories.find_or_create_by_name(match[2])
-    record.save
+    record.save && record
   end
 end

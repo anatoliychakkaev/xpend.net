@@ -1,0 +1,6 @@
+var $block = $('.day_block[data-date=<%= @time.to_date %>]');
+<% if @day.empty? %>
+  $block.remove();
+<% else %>
+  $block.parent().replaceWith('<%= escape_javascript(render :partial => 'day_block', :locals => { :records => @day, :only_block => true } ) %>')
+<% end %>

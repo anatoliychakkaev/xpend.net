@@ -1,8 +1,8 @@
 <% content_for :head do %>
   <script>
+    var categories = ['<%= @house_book.outlay_categories.map(&:name).join("','") %>'].sort();
+    var notes = ['<%= @house_book.outlay_records.map(&:note).uniq.join("','") %>'].sort();
     jQuery(function () {
-      var categories = ['<%= @house_book.outlay_categories.map(&:name).join("','") %>'].sort();
-      var notes = ['<%= @house_book.outlay_records.map(&:note).uniq.join("','") %>'].sort();
       var $input = jQuery('.form_container input[type=text]');
       $input.autocomplete([
       {
@@ -20,7 +20,7 @@
 <% end %>
 <div class="block_wrapper">
   <div class="form_container upper_rounded">
-    <%= form_for @house_book.outlay_records.build do |f| %>
+    <%= form_for @house_book.outlay_records.build, :remote => true do |f| %>
       <%= text_field_tag :outlay_record %><br/>
       <p class="example">
       Example: <strong>
