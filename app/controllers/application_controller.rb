@@ -3,14 +3,9 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  # before_filter :set_user_language
-  before_filter :set_user_time_zone
+  before_filter :init_user_settings
 
   protected
-
-  def set_user_time_zone
-    Time.zone = 'Moscow' #current_user.time_zone unless current_user.blank?
-  end
 
   def layout_by_resource
     unless user_signed_in?
@@ -22,5 +17,25 @@ class ApplicationController < ActionController::Base
 
   def define_house_book
     @house_book = current_user.default_house_book if user_signed_in?
+  end 
+
+  def init_user_settings
+    return unless user_signed_in?
+    Time.zone = current_user.time_zone || 'Moscow' #current_user.time_zone unless current_user.blank?
+    # locale
+    if current_user.locale
+      I18n.locale = current_user.locale
+    else
+      locales = %w(en ru)
+      user_locales = env['HTTP_ACCEPT_LANGUAGE'].split(',')
+      user_locales.each do |locale_str|
+        locale = locale_str.split(';').first
+        if locale && locales.include?(locale)
+          I18n.locale = locale
+          return
+        end
+      end
+    end
   end
+
 end

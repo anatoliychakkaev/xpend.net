@@ -1,0 +1,21 @@
+ru:
+  intro: Место для контроля расходов
+  locale: Язык интерфейса
+  user:
+    cancel: Удаление аккаунта
+    cancel_unhappy: Не нужен больше аккаунт?
+    cancel_link: Удалите мой аккаунт
+    cancel_confirm: Вы действительно хотите удалить аккаунт?
+  common:
+    back: Назад
+    update: Сохранить изменения
+  edit:
+    user: Редактирование профиля
+  email: Электронная почта
+  time_zone: Часовой пояс
+  password: Пароль
+  password_confirmation: Подтверждение пароля
+  password_hint: оставьте это поле пустым, если не хотите менять пароль
+  current_password: Текущий пароль
+  current_password_hint: нужен ваш текущий пароль, чтобы подтвердить изменения
+

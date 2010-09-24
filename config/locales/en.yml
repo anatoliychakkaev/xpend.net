@@ -1,5 +1,19 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  intro: XPEND.NET | Place to control your cash outlay
+  intro: Place to control your cash outlay
+  locale: Interface language
+  user:
+    cancel: Cancel my account
+    cancel_unhappy: Unhappy?
+    cancel_link: Cancel my account
+  common:
+    back: Back
+    update: Update
+  edit:
+    user: Edit user
+  email: Email
+  time_zone: Time zone
+  password: Password
+  password_confirmation: Password confirmation
+  password_hint: "leave blank if you don't want to change it"
+  current_password: current password
+  current_password_hint: we need your current password to confirm your changes

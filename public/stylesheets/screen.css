@@ -198,10 +198,10 @@ p.no_records {
   padding-top: 1px;
 }
 .outer_block h2, .outer_block h1 {
-  background: #bbb;
+  background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#eee), to(#ddd));
   line-height: 30px;
-  color: #ddd;
-  text-shadow: 1px 1px 0 #555;
+  color: #666;
+  text-shadow: 1px 1px 0 #fff;
   margin: 6px;
   margin-top: 3px;
   margin-left: -5px;
@@ -212,3 +212,4 @@ p.no_records {
   -moz-border-radius-topleft: 3px;
   -moz-border-radius-topright: 3px;
 }
+
