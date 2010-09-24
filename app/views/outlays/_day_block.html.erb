@@ -11,7 +11,7 @@
       <% if records.present? %>
         <% records.group_by(&:outlay_category_id).each do |records| %>
           <div class="category">
-            <%= records.last.first.outlay_category ? records.last.first.outlay_category.name : 'Uncategorized' %>
+            <%= records.last.first.outlay_category ? records.last.first.outlay_category.name : t('outlay_record.uncategorized') %>
             <span class="amount">
               <%= records.last.sum(&:amount) %>
             </span>
@@ -20,8 +20,8 @@
           <% records.last.each do |record| %>
             <div class="record" data-id="<%= record.id %>">
               <%= record.note %>&nbsp;
-              <%= link_to "Delete", record, :method => :delete, :confirm => 'Sure?', :remote => true %>
-              <%= link_to "Edit", [:edit, record] %>
+              <%= link_to t('outlay_record.delete'), record, :method => :delete, :confirm => t('outlay_record.destroy_confirm'), :remote => true %>
+              <%= link_to t('outlay_record.edit'), [:edit, record] %>
               <span class="amount">
                 <%= record.amount %>
               </span>
@@ -31,7 +31,7 @@
         <% end %>
       <% else %>
         <p class="no_records">
-          No outlay records for today
+          <%= t 'outlay_record.no_records' %>
         </p>
       <% end %>
     </div>
@@ -39,5 +39,5 @@
 </div>
 
 <% unless defined?(only_block) && only_block %>
-  <%= link_to "Earlier", { :action => 'earlier', :date => date.to_date }, :id => 'load_earlier', :remote => true %>
+  <%= link_to t('outlay_record.earlier'), { :action => 'earlier', :date => date.to_date }, :id => 'load_earlier', :remote => true %>
 <% end %>

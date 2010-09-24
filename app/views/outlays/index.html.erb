@@ -23,14 +23,14 @@
     <%= form_for @house_book.outlay_records.build, :remote => true do |f| %>
       <%= text_field_tag :outlay_record %><br/>
       <p class="example">
-      Example: <strong>
-        <span style="color: green" title="Amount">299.90</span>
-        <span style="color: blue" title="Category">Food</span><span
+     <%= t 'outlay_record.example' %>: <strong>
+        <span style="color: green" title="Amount"><%= t 'outlay_record.sum' %></span>
+        <span style="color: blue" title="Category"><%= t 'outlay_record.category' %></span><span
         style="color: red" title="colon">:</span>
-        <span style="color: gray" title="Short note">diner</span>
+        <span style="color: gray" title="Short note"><%= t 'outlay_record.comment' %></span>
       </strong><br/>
       </p>
-      <%= f.submit "Create outlay record" %>
+      <%= f.submit t('outlay_record.create') %>
     <% end %>
   </div>
 </div>

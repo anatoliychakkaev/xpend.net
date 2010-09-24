@@ -2,9 +2,9 @@
   <div class="top_nav">
     <% if user_signed_in? %>
       <p class="app_nav">
-        <!--<%= link_to "Books", house_books_path %> | -->
-        <%= link_to "Categories", outlay_categories_path %> |
-        <%= link_to "Trends" %>
+        <!--<%= link_to t('common.books'), house_books_path %> | -->
+        <%= link_to t('common.categories'), outlay_categories_path %> |
+        <%= link_to t('common.trends') %>
       </p>
     <% else %>
       <p class="app_nav">
@@ -13,11 +13,11 @@
     <% end %>
     <p class="user_nav">
     <% unless user_signed_in? %>
-      <%= link_to "Register", new_user_registration_path %> |
-      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to t('common.register'), new_user_registration_path %> |
+      <%= link_to t('common.sign_in'), new_user_session_path %>
     <% else %>
-      Logged in as <%= link_to current_user.email, edit_user_registration_path %>. Not you?
-      <%= link_to "Logout", destroy_user_session_path %>
+      <%= t 'common.logged_in_as' %> <%= link_to current_user.email, edit_user_registration_path %>. <%= t 'common.not_you' %>
+      <%= link_to t('common.logout'), destroy_user_session_path %>
     <% end %>
     </p>
   </div>

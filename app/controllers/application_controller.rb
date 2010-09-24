@@ -20,12 +20,18 @@ class ApplicationController < ActionController::Base
   end 
 
   def init_user_settings
-    return unless user_signed_in?
-    Time.zone = current_user.time_zone || 'Moscow' #current_user.time_zone unless current_user.blank?
-    # locale
-    if current_user.locale
-      I18n.locale = current_user.locale
-    else
+    locale_guess_needed = true
+    if user_signed_in?
+      # time zone
+      Time.zone = current_user.time_zone || 'Moscow' #current_user.time_zone unless current_user.blank?
+      # locale
+      if current_user.locale
+        I18n.locale = current_user.locale
+        locale_guess_needed = false
+      end
+    end
+
+    if locale_guess_needed
       locales = %w(en ru)
       user_locales = env['HTTP_ACCEPT_LANGUAGE'].split(',')
       user_locales.each do |locale_str|

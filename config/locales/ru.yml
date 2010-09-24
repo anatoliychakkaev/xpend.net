@@ -13,6 +13,14 @@ ru:
     show: Показать
     edit: Редактировать
     destroy: Удалить
+    logout: Выйти
+    register: Зарегистрироваться
+    sign_in: Войти
+    books: Журналы расходов
+    categories: Категории
+    trends: Динамика расходов
+    logged_in_as: Вы вошли как
+    not_you:  ''
   edit:
     user: Редактирование профиля
   email: Электронная почта
@@ -29,3 +37,15 @@ ru:
     list: Категории расходов
     new: Новая категория
     destroy_confirm: Вы уверены, что хотите удалить категорию?
+  outlay_record:
+    uncategorized: Без категории
+    delete: Удалить
+    edit: Редактировать
+    destroy_confirm: Вы уверены, что хотите удалить запись?
+    no_records: На сегодняшний день нет расходов
+    earlier: Ранее
+    example: Пример
+    sum: 299.90
+    category: Питание
+    comment: Обед
+    create: Создать запись о расходе
