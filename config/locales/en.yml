@@ -5,6 +5,7 @@ en:
     cancel: Cancel my account
     cancel_unhappy: Unhappy?
     cancel_link: Cancel my account
+    cancel_confirm: Are you sure you want to cancel your account?
   common:
     back: Back
     update: Update
@@ -20,6 +21,8 @@ en:
     trends: Trends
     logged_in_as: Logged in as
     not_you: Not you?
+    save: Save
+    discard: Discard
   edit:
     user: Edit user
   email: Email
@@ -47,3 +50,4 @@ en:
     category: Food
     comment: Dinner
     create: Create outlay record
+    edit_form_title: Edit outlay record

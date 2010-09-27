@@ -15,6 +15,22 @@
       }
       ]);
       $input[0].focus();
+
+      var $remove_outlay = $('.outlays .record a.remove');
+      $remove_outlay.live('click', function () {
+        var id = $(this).parent().attr('data-id');
+        var dialog = show_modal_dialog({
+          width: 200,
+          caption: 'Confirmation',
+        }, 'Are you sure you want to remove this record?', function () {
+          $.post('/outlay_records/' + id + '.js', {
+            '_method': 'delete'
+            }, function () {
+            dialog.close();
+          }, 'script');
+          return false;
+        });
+      });
     });
   </script>
 <% end %>
