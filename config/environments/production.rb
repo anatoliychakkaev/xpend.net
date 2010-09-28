@@ -36,6 +36,17 @@ XpendNet::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'xpend.net' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => 'rpm1602@gmail.com',
+    :password       => '123123',
+    :domain         => 'heroku.com',
+  }
 
   # Enable threaded mode
   # config.threadsafe!
