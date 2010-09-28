@@ -1,6 +1,7 @@
 ru:
   intro: Место для контроля расходов
   locale: Язык интерфейса
+  register: Зарегистрироваться
   user:
     cancel: Удаление аккаунта
     cancel_unhappy: Не нужен больше аккаунт?
@@ -21,15 +22,24 @@ ru:
     trends: Динамика расходов
     logged_in_as: Вы вошли как
     not_you:  ''
+    save: Сохранить
+    cancel: Отменить
+    welcome: Добро пожаловать
+    sign_up: Зарегистрироваться
+    remember_me: Запомнить меня
+  confirmation:
+    did_not_receive: Не получили инструкции подтверждения?
+  unlock_instructions:
+    did_not_receive: Не получили инструкции по разблокированию?
   edit:
     user: Редактирование профиля
   email: Электронная почта
   time_zone: Часовой пояс
   password: Пароль
   password_confirmation: Подтверждение пароля
-  password_hint: оставьте это поле пустым, если не хотите менять пароль
+  password_hint: Оставьте это поле пустым, если не хотите менять пароль
   current_password: Текущий пароль
-  current_password_hint: нужен ваш текущий пароль, чтобы подтвердить изменения
+  current_password_hint: Нужен ваш текущий пароль, чтобы подтвердить изменения
   outlay_category:
     name: Название категории
     edit: Изменение категории
@@ -48,5 +58,11 @@ ru:
     sum: 299.90
     category: Питание
     comment: Обед
-    create: Создать запись о расходе
+    create_form_title: Создать запись о расходе
     edit_form_title: Редактировать запись о расходе
+    category_id: Название категории
+    amount: Сумма
+    note: Комментарий
+    save: Сохранить
+    confirmation: Подтверждение
+    confirmation_question: Вы уверены, что хотите удалить эту запись?

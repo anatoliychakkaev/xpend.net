@@ -3,5 +3,5 @@
   $(dialog.content('<%= escape_javascript(render(:partial => 'form')) %>')).find('input[type=submit]').remove();
   dialog.show();
   dialog.buttons.commit.innerHTML = '<%= t 'common.save' %>';
-  dialog.buttons.cancel.innerHTML = '<%= t 'common.discard' %>';
+  dialog.buttons.cancel.innerHTML = '<%= t 'common.cancel' %>';
 })();

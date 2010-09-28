@@ -20,6 +20,10 @@ en:
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'
+      change_title: Change your password
+      change: Change my password
+      forgot_title: Forgot your password?
+      send_reset_password: Send me reset password instructions
     confirmations:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
@@ -33,7 +37,11 @@ en:
     mailer:
       confirmation_instructions:
         subject: 'Confirmation instructions'
-      reset_password_instructions:
-        subject: 'Reset password instructions'
-      unlock_instructions:
-        subject: 'Unlock Instructions'
+    confirmation_instructions:
+      resend: Resend confirmation instructions
+      resend_form_title: Resend confirmation instructions
+    reset_password_instructions:
+      subject: 'Reset password instructions'
+    unlock_instructions:
+      subject: 'Unlock Instructions'
+      resend: Resend unlock instructions

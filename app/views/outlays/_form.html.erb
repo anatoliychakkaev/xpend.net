@@ -1,15 +1,15 @@
-<%= form_for @outlay_record do |f| %>
+  <%= form_for @outlay_record do |f| %>
   <p>
-    <%= f.label :outlay_category_id %><br/>
+    <%= f.label :outlay_category_id, t('outlay_record.category_id') %><br/>
     <%= f.select :outlay_category_id, options_for_select(@house_book.outlay_categories.map{|c| [c.name, c.id]}, @outlay_record.outlay_category_id) %>
   </p>
   <p>
-    <%= f.label :amount %><br/>
+    <%= f.label :amount, t('outlay_record.amount') %><br/>
     <%= f.text_field :amount %>
   </p>
   <p>
-    <%= f.label :note %><br/>
+    <%= f.label :note, t('outlay_record.note') %><br/>
     <%= f.text_field :note %>
   </p>
-  <%= f.submit 'Save' %>
+  <%= f.submit t('outlay_record.save') %>
 <% end %>

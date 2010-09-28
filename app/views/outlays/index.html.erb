@@ -21,8 +21,8 @@
         var id = $(this).parent().attr('data-id');
         var dialog = show_modal_dialog({
           width: 200,
-          caption: 'Confirmation',
-        }, 'Are you sure you want to remove this record?', function () {
+          caption: '<%=  t('outlay_record.confirmation') %>'
+        }, '<%=  t('outlay_record.confirmation_question') %>', function () {
           $.post('/outlay_records/' + id + '.js', {
             '_method': 'delete'
             }, function () {
@@ -46,7 +46,7 @@
         <span style="color: gray" title="Short note"><%= t 'outlay_record.comment' %></span>
       </strong><br/>
       </p>
-      <%= f.submit t('outlay_record.create') %>
+      <%= f.submit t('outlay_record.create_form_title') %>
     <% end %>
   </div>
 </div>

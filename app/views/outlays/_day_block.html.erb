@@ -20,8 +20,24 @@
           <% records.last.each do |record| %>
             <div class="record" data-id="<%= record.id %>">
               <%= record.note %>&nbsp;
-              <%= link_to t('outlay_record.delete'), '#', :class => 'remove' %>
-              <%= link_to t('outlay_record.edit'), [:edit, record], :remote => true %>
+              
+              <%= link_to(
+                image_tag('/images/icons/trash.gif',
+                  :class => 'icon',
+                  :alt => t('outlay_record.delete')
+                ),
+                '#',
+                :class => 'remove',
+                :title => t('outlay_record.delete')
+              ) %>
+              <%= link_to(
+                image_tag('/images/icons/pencil.png',
+                  :class => 'icon',
+                  :alt => t('outlay_record.edit')
+                ),
+                [:edit, record],
+                :title => t('outlay_record.edit'),
+                :remote => true ) %>
               <span class="amount">
                 <%= record.amount %>
               </span>

@@ -1,6 +1,7 @@
 en:
   intro: Place to control your cash outlay
   locale: Interface language
+  register: Register
   user:
     cancel: Cancel my account
     cancel_unhappy: Unhappy?
@@ -22,7 +23,14 @@ en:
     logged_in_as: Logged in as
     not_you: Not you?
     save: Save
-    discard: Discard
+    cancel: Cancel
+    welcome: Welcome
+    sign_up: Sign up
+    remember_me: Remember me
+  confirmation:
+    did_not_receive: Didn't receive confirmation instructions?
+  unlock_instructions:
+    did_not_receive: Didn't receive unlock instructions?
   edit:
     user: Edit user
   email: Email
@@ -30,8 +38,8 @@ en:
   password: Password
   password_confirmation: Password confirmation
   password_hint: "leave blank if you don't want to change it"
-  current_password: current password
-  current_password_hint: we need your current password to confirm your changes
+  current_password: Current password
+  current_password_hint: We need your current password to confirm your changes
   outlay_category:
     name: Category name
     edit: Editing category
@@ -49,5 +57,11 @@ en:
     sum: 299.90
     category: Food
     comment: Dinner
-    create: Create outlay record
+    create_form_title: Create outlay record
     edit_form_title: Edit outlay record
+    category_id: Outlay category
+    amount: Amount
+    note: Note
+    save: Save
+    confirmation: Confirmation
+    confirmation_question: Are you sure you want to remove this record?

@@ -3,6 +3,9 @@ body {
   padding: 0;
 }
 
+.icon {
+  border: 0;
+}
 .notice, .alert {
   padding: 10px;
   -moz-border-radius: 3px;
