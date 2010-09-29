@@ -1,0 +1,1 @@
+$('.category_wrap[data-date=<%= params[:date].to_date %>] .outlays[data-category=<%= params[:outlay_category_id] %>]').html('<%= escape_javascript(render :partial => 'outlays') %>');

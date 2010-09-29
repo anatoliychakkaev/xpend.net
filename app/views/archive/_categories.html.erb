@@ -1,0 +1,20 @@
+<% 
+  sum_amount = categories.collect(&:amount).sum
+  max_amount = categories.collect(&:amount).max
+%>
+<% for category in categories do %>
+  <div class="category_wrap" data-date="<%= category.created_at.to_date %>">
+    <div class="category" style="padding: 3px; padding-left: 0;">
+      <%= link_to category.outlay_category.name, archive_category_path(:date => category.created_at.to_date, :outlay_category_id => category.outlay_category_id), :remote => true %>
+      <span class="amount">
+        <%= category.amount %><br/>
+      </span>
+    </div>
+    <div style="background: #d0d0da; height: 15px; line-height: 15px; font-size: 10px; border-top: 15px solid #dfdfdf;margin: 5px; margin-left: 0; font-weight: 700; color: gray; text-shadow: 1px 1px 1px #fff; width: <%= [(70 * category.amount / max_amount).to_i, 7].max %>%">
+      <%= (100 * category.amount / sum_amount).to_i %>%
+    </div>
+    <div class="outlays" data-category="<%= category.outlay_category.id %>">
+    </div>
+  </div>
+
+<% end %>

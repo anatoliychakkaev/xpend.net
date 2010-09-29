@@ -21,7 +21,7 @@ ru:
     categories: Категории
     trends: Динамика расходов
     logged_in_as: Вы вошли как
-    not_you:  ''
+    not_you:  ' '
     save: Сохранить
     cancel: Отменить
     welcome: Добро пожаловать
@@ -66,3 +66,5 @@ ru:
     save: Сохранить
     confirmation: Подтверждение
     confirmation_question: Вы уверены, что хотите удалить эту запись?
+  archive:
+    title: Архив расходов

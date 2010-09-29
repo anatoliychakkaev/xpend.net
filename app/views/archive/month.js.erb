@@ -1,0 +1,4 @@
+$('#categories').html('<%= escape_javascript(render :partial => 'categories', :locals => { :categories => @categories }) %>');
+$month = $('.month[data-date=<%= params[:date] %>]');
+$month.parent().find('.month.active').removeClass('active');
+$month.addClass('active');
