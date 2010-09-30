@@ -1,4 +1,32 @@
 ru:
+  helpers:
+    label:
+      outlay_category:
+        name: "Название категории"
+  models:
+    outlay_category: Категория расхода
+    outlay_record: Запись о расходе
+    house_book: Журнал расходов
+  attributes:
+    name: "Название"
+    email: Электронная почта
+    password: Пароль
+    password_confirmation: Подтверждение пароля
+  errors:
+    messages:
+      blank: "не может быть пустым"
+    attributes:
+      email:
+        invalid: "не валиден"
+        taken: "уже зарегистрированa в системе"
+        blank: "не может быть пустой"
+      password:
+        confirmation: " и подтверждение пароля должны совпадать"
+    template:
+      header:
+        one: "Не могу сохранить %{model}. Есть одна ошибка"
+        other: "Невозможно сохранить из-за ошибок"
+      body: "Вот что должно быть исправлено:"
   intro: Место для контроля расходов
   locale: Язык интерфейса
   register: Зарегистрироваться
@@ -8,6 +36,7 @@ ru:
     cancel_link: Удалите мой аккаунт
     cancel_confirm: Вы действительно хотите удалить аккаунт?
   common:
+    registration: Регистрация
     back: Назад
     update: Сохранить изменения
     submit: Сохранить
@@ -28,7 +57,7 @@ ru:
     sign_up: Зарегистрироваться
     remember_me: Запомнить меня
   confirmation:
-    did_not_receive: Не получили инструкции подтверждения?
+    did_not_receive: Не получили инструкции для активации аккаунта?
   unlock_instructions:
     did_not_receive: Не получили инструкции по разблокированию?
   edit:
