@@ -1,4 +1,10 @@
 XpendNet::Application.routes.draw do
+  get "archive", :to => 'archive#index'
+
+  get "archive/:date", :to => 'archive#month', :as => :archive_month
+
+  get "archive/:date/:outlay_category_id", :to => 'archive#category', :as => :archive_category
+
   devise_for :users
 
   root :to => 'outlays#index'

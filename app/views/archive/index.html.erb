@@ -1,0 +1,16 @@
+<h1><%= t 'archive.title' %></h1>
+<div class="archive">
+  <div class="archive_months">
+    <% @months.each_with_index do |month, i| %>
+      <div class="month<%= i == 0 ? ' active' : '' %>" data-date="<%= month.created_at.to_date %>">
+        <%= link_to month.created_at.strftime("%B '%y"), archive_month_path(:date => month.created_at.to_date), :remote => true %><br/>
+        <span class="small">
+          <%= month.amount.to_i %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+  <div id="categories" class="monthly_expend outlays" style="width: 369px">
+    <%= render :partial => 'categories', :locals => { :categories => @categories } %>
+  </div>
+</div>
