@@ -25,17 +25,29 @@ div.field, div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
 }
 
+.field_with_errors label{
+  color:red;
+  font-weight: bold;
+}
+
+.field_with_errors input{
+ background: url(/images/error_field_bg.png) 0 0 repeat #fff;
+}
+
+.field_with_errors input:focus{
+  background: #fff;
+ }
+
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width: 363px;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  margin-left: -5px;
 }
 
 #error_explanation h2 {
@@ -45,8 +57,7 @@ div.field, div.actions {
   font-size: 12px;
   margin: -7px;
   margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
+  color: #666;
 }
 
 #error_explanation ul li {
