@@ -107,6 +107,19 @@ span.amount {
   -moz-border-radius-topright: 3px;
   border-radius: 3px;
 }
+input[type=text], input[type=password] {
+  border: 1px solid #aaa;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 3px;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+  outline: none;
+}
+
 .form_container {
   background-color: #eee;
   background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#f0f0f0), to(#E8E8E8));
