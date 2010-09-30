@@ -15,17 +15,25 @@ body {
 }
 
 .notice {
-  -moz-box-shadow: 1px 1px 0 #559955;
-  box-shadow: 1px 1px 0 #559955;
-  -webkit-box-shadow: 1px 1px 0 #559955;
+  border: 1px solid #b8e7b8;
+  -moz-box-shadow: 1px 1px 3px #ddd;
+  box-shadow: 1px 1px 3px #ddd;
+  -webkit-box-shadow: 1px 1px 3px #ddd;
   background: none repeat scroll 0 0 #DDFFDD;
-  border: 1px solid #88AA88;
-  color: green;
+  color: #2a2;
+  background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#efe), to(#dfd));
+  background: -moz-linear-gradient(top, #efe, #dfd);
 }
 
 .alert {
   background: #fdd;
   color: red;
+  border: 1px solid #faa;
+   -moz-box-shadow: 1px 1px 3px #ddd;
+  box-shadow: 1px 1px 3px #ddd;
+  -webkit-box-shadow: 1px 1px 3px #ddd;
+background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#fee), to(#fdd));
+  background: -moz-linear-gradient(top, #fee, #fdd);
 }
 
 .user_nav {
