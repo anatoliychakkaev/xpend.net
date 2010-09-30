@@ -1,7 +1,7 @@
 <%= form_for(@outlay_category) do |f| %>
   <% if @outlay_category.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@outlay_category.errors.count, "error") %> prohibited this outlay_category from being saved:</h2>
+      <h2><%= t 'errors.template.header.other', :count =>@outlay_category.errors.count %>:</h2>
 
       <ul>
       <% @outlay_category.errors.full_messages.each do |msg| %>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :name, t("outlay_category.name") %><br>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <div class="actions">
