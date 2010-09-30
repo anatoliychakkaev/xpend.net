@@ -2,9 +2,11 @@
   <div class="top_nav">
     <% if user_signed_in? %>
       <p class="app_nav">
+        <%= link_to t('common.main'), root_path, :id => "logo" %> |
         <!--<%= link_to t('common.books'), house_books_path %> | -->
         <%= link_to t('common.categories'), outlay_categories_path %> |
-        <%= link_to t('common.trends') %>
+        <%= link_to t('common.trends') %> |
+        <%= link_to t('common.archive'), archive_path %>
       </p>
     <% else %>
       <p class="app_nav">

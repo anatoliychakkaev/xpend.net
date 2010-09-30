@@ -4,7 +4,7 @@ development:
   adapter: postgresql
   encoding: utf8
   database: expends
-  username: postgres
+  username: jane
   password: 123123
   host: localhost
 

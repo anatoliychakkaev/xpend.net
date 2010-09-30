@@ -12,10 +12,13 @@ ru:
     email: Электронная почта
     password: Пароль
     password_confirmation: Подтверждение пароля
+    confirmation_token: Код активации
   errors:
     messages:
       blank: "не может быть пустым"
     attributes:
+      confirmation_token:
+        invalid: "неправильный"
       email:
         invalid: "не валиден"
         taken: "уже зарегистрированa в системе"
@@ -36,6 +39,7 @@ ru:
     cancel_link: Удалите мой аккаунт
     cancel_confirm: Вы действительно хотите удалить аккаунт?
   common:
+    archive: Архив
     registration: Регистрация
     back: Назад
     update: Сохранить изменения
@@ -48,7 +52,7 @@ ru:
     sign_in: Войти
     books: Журналы расходов
     categories: Категории
-    trends: Динамика расходов
+    trends: Динамика
     logged_in_as: Вы вошли как
     not_you:  ' '
     save: Сохранить
@@ -56,6 +60,7 @@ ru:
     welcome: Добро пожаловать
     sign_up: Зарегистрироваться
     remember_me: Запомнить меня
+    main: Расходы
   confirmation:
     did_not_receive: Не получили инструкции для активации аккаунта?
   unlock_instructions:

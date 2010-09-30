@@ -105,7 +105,8 @@ span.amount {
   -webkit-border-top-left-radius: 3px;
   -moz-border-radius-topleft: 3px;
   -moz-border-radius-topright: 3px;
-  border-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 input[type=text], input[type=password] {
   border: 1px solid #aaa;
@@ -130,7 +131,7 @@ input[type=text]:focus, input[type=password]:focus{
   margin-left: -5px;
   margin-top: 3px;
   border-bottom: 2px solid #e7e7e7;
-  //-webkit-box-shadow: #888 0px 1px 1px;
+ /* -webkit-box-shadow: #888 0px 1px 1px;*/
   -moz-box-shadow: #888 0px 1px 1px;
   box-shadow: #888 0px 1px 1px;
 }
@@ -257,50 +258,7 @@ p.no_records {
   border-top-left-radius: 3px;
 }
 
-.archive {
-  position: relative;
-}
-
-.archive_months {
-  width: 150px;
-  position: absolute;
-  left: -175px;
-}
-
-.month.active a{
-  color: #755;
-}
-
-.month.active {
-  background: #dde !important;
-}
-
-.archive_months .month {
-  border: 1px solid #aaa;
-  background: #eee;
-  text-shadow: 1px 1px 1px #fff;
-  border-radius: 3px;
-  padding: 5px;
-  margin-bottom: 5px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 15px;
-  width: 150px;
-  text-align: right;
-}
-
-.archive_months a {
-  color: #555;
-  text-decoration: none;
-}
-
-.archive_months a:hover {
-  color: #336;
-}
-
-.archive_months .month .small {
-  font-size: 10px;
-  line-height: 10px;
-  color: #aaa;
-}
-
+#logo{
+  padding-left: 20px;
+  background: url(/images/icons/money.png) 0 0 no-repeat transparent;
+ }
