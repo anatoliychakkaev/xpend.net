@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
   end 
 
   def init_user_settings
+
+    theme = cookies["theme"]
+    # raise theme.inspect
+    @theme = theme && CONST['themes'].include?(theme) ? theme.to_sym : :light
+
     locale_guess_needed = true
     if user_signed_in?
       # time zone

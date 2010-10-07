@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>xpend.net</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag @theme %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
@@ -11,12 +11,9 @@
   <%= render :partial => 'shared/top_nav' %>
 
   <div class="content">
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+
+    <%= render :partial => 'shared/notification_area' %>
+
     <div class="outer_block">
       <%= yield %>
     </div>

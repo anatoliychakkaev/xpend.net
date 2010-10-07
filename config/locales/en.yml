@@ -8,6 +8,10 @@ en:
     cancel_link: Cancel my account
     cancel_confirm: Are you sure you want to cancel your account?
   common:
+    themes:
+      light: Light
+      dark: Dark
+      jane: Jane
     archive: Archive
     back: Back
     update: Update

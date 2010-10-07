@@ -5,7 +5,7 @@ XpendNet::Application.routes.draw do
 
   get "archive/:date/:outlay_category_id", :to => 'archive#category', :as => :archive_category
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'users/registrations'}
 
   root :to => 'outlays#index'
   resources :outlay_records, :controller => :outlays do

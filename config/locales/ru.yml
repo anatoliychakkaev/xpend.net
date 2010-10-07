@@ -3,12 +3,17 @@ ru:
     label:
       outlay_category:
         name: "Название категории"
+      user:
+        locale: "Язык интерфейса"
+        time_zone: "Часовой пояс"
+        current_password: "Текущий пароль"
   models:
     outlay_category: Категория расхода
     outlay_record: Запись о расходе
     house_book: Журнал расходов
   attributes:
     name: "Название"
+    design_theme: "Тема оформления"
     email: Электронная почта
     password: Пароль
     password_confirmation: Подтверждение пароля
@@ -39,6 +44,10 @@ ru:
     cancel_link: Удалите мой аккаунт
     cancel_confirm: Вы действительно хотите удалить аккаунт?
   common:
+    themes:
+      light: Светлая
+      dark: Темная
+      jane: Женечка
     archive: Архив
     registration: Регистрация
     back: Назад

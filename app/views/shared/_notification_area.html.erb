@@ -1,0 +1,16 @@
+<%
+  a = alert
+  n = notice
+%>
+
+<% if a || n %>
+  <div class="outer_block small_height_block">
+    <% if n %>
+      <p class="notice"><%= n %><em>V</em></p>
+    <% end %>
+    <% if a %>
+      <p class="alert"><%= a %><em>V</em></p>
+    <% end %>
+    
+  </div>
+<% end %>

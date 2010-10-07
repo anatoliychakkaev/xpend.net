@@ -1,0 +1,63 @@
+.drag_shadow {
+  position: absolute;
+  background: #888;
+  opacity: 0.5;
+  border: 1px solid #000;
+  z-index: 1003;
+  display: block;
+  cursor: move;
+}
+
+.dialog_wrap {
+  width:440px;
+  position:absolute;
+  top:40px;
+  left:50px;
+  border:8px solid #aaa;
+  background:#fff;
+}
+
+.dialog_wrap.error {
+  border-color: #faa;
+}
+
+.overlay {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+}
+
+.dialog_window {
+  color:#7e7e7e;
+  font:12px Verdana, Helvetica, Arial, Verdana;
+  padding:10px;
+  background: #fff;
+}
+
+.dialog_caption {
+  color:#7e7e7e;
+  background: #eee url(images/application.png) no-repeat 6px 6px;
+  font:bold 12px Verdana, Helvetica, Arial, Verdana;
+  border:1px solid #aaa;
+  padding:6px;
+  padding-left: 26px;
+  margin:-11px -11px 5px;
+  cursor: move;
+  text-align: left;
+}
+
+.error .dialog_caption {
+  border-color: #faa;
+  color: red;
+  background-image: url(images/error.png);
+}
+.dialog_content {
+  padding: 5px;
+}
+
+.dialog_footer {
+  margin-top: 5px;
+  text-align: right;
+}
