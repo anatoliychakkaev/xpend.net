@@ -352,17 +352,18 @@ var Dialog = (function () {
         if (!html) {
             return descr_div.firstChild;
         }
-        if (html.nodeName && html.nodeType) {
-            var node = descr_div.firstChild, next;
-            while (node) {
-                next = node.nextSibling;
-                descr_div.removeChild(node);
-                node = next;
-            }
-            descr_div.appendChild(html);
-        } else {
-            descr_div.innerHTML = html;
+        var node = descr_div.firstChild, next;
+        while (node) {
+            next = node.nextSibling;
+            descr_div.removeChild(node);
+            node = next;
         }
+        if (!html.nodeName || !html.nodeType) {
+            var div = document.createElement('div');
+            div.innerHTML = html;
+            html = div;
+        }
+        descr_div.appendChild(html);
         return descr_div.firstChild;
     };
 

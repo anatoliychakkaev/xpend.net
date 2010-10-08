@@ -32,7 +32,11 @@ class OutlaysController < ApplicationController
     if @outlay_record.update_attributes(params[:outlay_record])
       flash[:notice] = 'Record updated'
     end
-    redirect_to root_path
+    redirect_to root_path unless request.xhr?
+    if request.xhr?
+      @time = @outlay_record.created_at
+      @day = @house_book.outlay_records.by_date(@time)
+    end
   end
 
   def earlier

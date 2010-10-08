@@ -20,7 +20,7 @@
       $remove_outlay.live('click', function () {
         var id = $(this).parent().attr('data-id');
         var dialog = show_modal_dialog({
-          width: 200,
+          width: 300,
           caption: '<%=  t('outlay_record.confirmation') %>'
         }, '<%=  t('outlay_record.confirmation_question') %>', function () {
           $.post('/outlay_records/' + id + '.js', {

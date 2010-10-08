@@ -1,7 +1,17 @@
 (function () {
-  var dialog = new Dialog({caption: '<%= t 'outlay_record.edit_form_title' %>'});
-  $(dialog.content('<%= escape_javascript(render(:partial => 'form')) %>')).find('input[type=submit]').remove();
+  var dialog = new Dialog({
+    caption: '<%= t 'outlay_record.edit_form_title' %>',
+    width: 325
+  });
+  dialog.content('<%= escape_javascript(render(:partial => 'form', :locals => { :remote => true } )) %>');
+  var $form = $(dialog.content()).find('form');
+  $form.find('input[type=submit]').remove();
   dialog.show();
   dialog.buttons.commit.innerHTML = '<%= t 'common.save' %>';
   dialog.buttons.cancel.innerHTML = '<%= t 'common.cancel' %>';
+  dialog.bind('commit', function () {
+    $form.callRemote();
+    return false;
+  });
+  window.DIALOG = dialog;
 })();

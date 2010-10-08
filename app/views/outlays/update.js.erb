@@ -1,0 +1,10 @@
+DIALOG.close();
+var $block = $('.day_block[data-date=<%= @time.to_date %>]');
+var $r = $block.find('.record[data-id=<%= @outlay_record.id %>]');
+$r.hide('slow', function () {
+  var $new_block = $('<%= escape_javascript(render :partial => 'day_block', :locals => { :records => @day, :only_block => true } ) %>');
+  $r = $new_block.find('.record[data-id=<%= @outlay_record.id %>]');
+  $r.hide();
+  $block.parent().replaceWith($new_block);
+  $r.show('slow');
+});

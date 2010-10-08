@@ -1,4 +1,4 @@
-  <%= form_for @outlay_record do |f| %>
+<%= form_for @outlay_record, :remote => defined?(remote) && remote do |f| %>
   <p>
     <%= f.label :outlay_category_id, t('outlay_record.category_id') %><br/>
     <%= f.select :outlay_category_id, options_for_select(@house_book.outlay_categories.map{|c| [c.name, c.id]}, @outlay_record.outlay_category_id) %>
