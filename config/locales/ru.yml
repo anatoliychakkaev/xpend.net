@@ -16,6 +16,7 @@ ru:
     design_theme: "Тема оформления"
     email: Электронная почта
     password: Пароль
+    current_password: Текущий пароль
     password_confirmation: Подтверждение пароля
     confirmation_token: Код активации
   errors:
@@ -30,6 +31,8 @@ ru:
         blank: "не может быть пустой"
       password:
         confirmation: " и подтверждение пароля должны совпадать"
+      current_password:
+         invalid: неверен
     template:
       header:
         one: "Не могу сохранить %{model}. Есть одна ошибка"

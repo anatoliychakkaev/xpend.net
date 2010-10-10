@@ -1,6 +1,8 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  min-height: 100%;
 }
 
 .icon {
@@ -147,6 +149,10 @@ input[type=text], input[type=password] {
 
 input[type=text]:focus, input[type=password]:focus{
   outline: none;
+}
+
+.dialog_content input[type=text], .dialog_content input[type=password] {
+  width: 289px;
 }
 
 .form_container {
