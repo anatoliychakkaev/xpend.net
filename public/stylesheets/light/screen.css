@@ -170,7 +170,7 @@ input[type=text]:focus, input[type=password]:focus{
   box-shadow: #888 0px 1px 1px;
 }
 .form_container input {
-  width: 357px;
+  width: 352px;
   font-size: 1.7em;
 }
 .form_container input[type=text] {
