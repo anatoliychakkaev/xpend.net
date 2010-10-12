@@ -42,10 +42,12 @@ body, html {
 
 .notice em {
   border-top-color: #dfd;
+  display: none;
 }
 
 .alert em {
   border-top-color: #fdd;
+  display: none;
 }
 
 .alert {
