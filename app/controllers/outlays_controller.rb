@@ -3,14 +3,14 @@ class OutlaysController < ApplicationController
   before_filter :define_house_book
 
   def index
-    @today_records = @house_book.outlay_records.by_date(Date.today)
-    @yesterday_records = @house_book.outlay_records.by_date(Date.today - 1.day)
+    @today_records = @house_book.outlay_records.by_date(Time.zone.now.to_date)
+    @yesterday_records = @house_book.outlay_records.by_date(Time.zone.now.to_date - 1.day)
   end
 
   def create
     if @record = @house_book.outlay_records.create_from_string(params[:outlay_record])
       flash[:notice] = 'Record created'
-      @day = @house_book.outlay_records.by_date(Date.today)
+      @day = @house_book.outlay_records.by_date(Time.zone.now.to_date)
     end
     redirect_to root_path unless request.xhr?
   end
