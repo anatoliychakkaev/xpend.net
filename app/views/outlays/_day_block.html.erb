@@ -1,4 +1,4 @@
-<% date = records.present? ? records.to_a.first.created_at.to_date : Date.today %>
+<% date = records.present? ? records.to_a.first.created_at.to_date : Time.zone.now.to_date %>
 <div class="block_wrapper">
   <div class="day_block upper_rounded" data-date="<%= date %>">
     <div class="header upper_rounded">
