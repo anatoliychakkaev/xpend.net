@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "noreply@xpend.net"
+  default :from => "xpend.net <noreply@xpend.net>"
 
   def notification(user)
     @user = user
