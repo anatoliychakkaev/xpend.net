@@ -1,0 +1,5 @@
+<h1><%= t 'subscription.unsubscribe_title' %></h1>
+<p><%= t 'subscription.unsubscribe_hint' %></p>
+<%= form_tag subscriptions_destroy_path, :method => :delete do %>
+  <%= submit_tag t('subscription.unsubscribe_commit') %>
+<% end %>

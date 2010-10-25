@@ -1,4 +1,8 @@
 XpendNet::Application.routes.draw do
+  get "subscriptions/unsubscribe"
+
+  delete "subscriptions/destroy"
+
   get "archive", :to => 'archive#index'
 
   get "archive/:date", :to => 'archive#month', :as => :archive_month

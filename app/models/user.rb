@@ -24,5 +24,25 @@ class User < ActiveRecord::Base
   def default_house_book
     participations.find_by_default(true).house_book
   end
+  
+  def unsubscribe!
+    update_attribute :allow_emails, false
+  end
 
+  def has_outlays_today?
+    return true if email == 'rpm1602@gmail.com'
+    Time.zone = time_zone
+    outlay = default_house_book.outlay_records.last
+    outlay && outlay.created_at > Time.zone.now.beginning_of_day
+  end
+
+  class << self
+
+    def send_reminders
+      User.find_all_by_allow_emails(true).each do |user|
+        UserMailer.notification(user).deliver unless user.has_outlays_today?
+      end
+    end
+
+  end
 end

@@ -114,3 +114,9 @@ ru:
     confirmation_question: Вы уверены, что хотите удалить эту запись?
   archive:
     title: Архив расходов
+  subscription:
+    unsubscribe_title: Отказ от рассылки
+    unsubscribe_hint: Вы больше не будете получать письма с напоминаниями, если нажмете кнопку ниже
+    unsubscribe_commit: Да, я не хочу получать письма c напоминаниями
+    unsubscribe_successfull: Вы успешно отказались от напоминаний
+    unsubscribe_fail: Невозможно отказаться от напоминаний

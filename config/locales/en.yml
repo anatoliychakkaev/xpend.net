@@ -73,3 +73,9 @@ en:
     confirmation_question: Are you sure you want to remove this record?
   archive:
     title: Archive
+  subscription:
+    unsubscribe_title: Cancel subscription
+    unsubscribe_hint: "You won't get notifications if you click button below"
+    unsubscribe_commit: Cancel subscription
+    unsubscribe_successfull: Subscription has been cancelled
+    unsubscribe_fail: Can not cancel subscription
